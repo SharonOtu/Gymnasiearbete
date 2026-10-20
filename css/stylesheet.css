@@ -16,6 +16,23 @@ body {
     width: 100%;
     height: 100vh;
     min-height: 600px;
-    
+}
 
+.art-container{
+    position: absolute;
+    inset: O;
+}
+
+.art-image{
+
+    width: 180px;
+    height: 240px;
+
+    object-fit: cover;
+    border-radius: 4px;
+
+    left:50%;
+    top: 50%;
+
+    transform
 }

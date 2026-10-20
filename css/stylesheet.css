@@ -24,6 +24,7 @@ body {
 }
 
 .art-image{
+    position: absolute;
 
     width: 180px;
     height: 240px;
@@ -34,5 +35,45 @@ body {
     left:50%;
     top: 50%;
 
-    transform
+    transform: translate(-50%, -50%)
+    rotate(0deg)
+    scale(0.2);
+
+    opacity: 0;
+
+    transition: left 2s cubic-bezier(0.2, 0.7, 0.2, 1),top 2s cubic-bezier(0.2, 0.7, 0.2, 1),
+    transform 2s cubic-bezier(0.2, 0.7, 0.2, 1), opacity 1s ease;
+
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.art-image.scattered {
+    opacity: 1;
+}
+
+.intro-content{
+    position: absolute;
+
+    left:50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+
+    with: 90%;
+    max-width: 600px;
+
+    text-align: center;
+
+    z-index: 10;
+
+    color: #29251f;
+
+    pointer-events: none;
+}
+
+.intro-content h1{
+    font-family: georgia, serif;
+    font-size: clamp(2rem, 7vw, 6rem);
+    font-weight: normal;
+
+    margin-bottom: 20px;
 }

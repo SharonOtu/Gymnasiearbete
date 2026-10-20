@@ -80,7 +80,7 @@ $_POST['password'] = $hashed_password;*/
             <input type="submit" id="submit" name="submit">
         </form>
 
-        <p><a href="login.php">Already have an account?</a></p>
+        <p><a href="Tourlylogin.php">Already have an account?</a></p>
     
 </body>
 </html>

@@ -9,6 +9,7 @@
 body {
     font-family: Arial, sans-serif;
     background-color: #090A0B;
+    background-image: url('../images/indexIMG3.jpg');
 }
 
 .intro{
@@ -18,9 +19,9 @@ body {
     min-height: 600px;
 }
 
-.art-container{
+.albumImg-container{
     position: absolute;
-    inset: O;
+    inset: 0;
 }
 
 .art-image{
@@ -51,14 +52,14 @@ body {
     opacity: 1;
 }
 
-.intro-content{
+.introTxt-container{
     position: absolute;
 
     left:50%;
     top: 50%;
     transform: translate(-50%, -50%);
 
-    with: 90%;
+    width: 90%;
     max-width: 600px;
 
     text-align: center;
@@ -70,10 +71,58 @@ body {
     pointer-events: none;
 }
 
-.intro-content h1{
+.introTxt-container h1{
     font-family: georgia, serif;
     font-size: clamp(2rem, 7vw, 6rem);
     font-weight: normal;
+    color: #4B1268;
 
     margin-bottom: 20px;
+}
+
+.introTxt-container p{
+    font-size: 1.1rem;
+    color: #FFFFFF;
+
+    line-height: 1.7;
+
+    max-width: 450px;
+
+    margin: 0 auto;
+}
+
+.start-btn {
+    display: inline-block;
+
+    margin-top: 30px;
+    padding: 15px 35px;
+
+    background-color: #29251f;
+    color:white;
+
+    text-decoration: none;
+
+    border-radius: 30px;
+
+    font-size: 1rem;
+    letter-spacing: 1px;
+
+    opacity: 0;
+    visibility: hidden;
+
+    pointer-events: auto;
+    transform: translateY(15px);
+    transition: opacity 0.8s ease, transform 0.8s ease,
+                background-color 0.3s ease, visibility 0.8s;
+    
+}
+/* Syns när animationen slutar*/
+.start-btn.visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.start-btn:hover {
+
 }

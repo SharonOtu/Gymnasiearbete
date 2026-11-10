@@ -11,7 +11,7 @@ body {
     background-color: #090A0B;
     background-image: url('../images/indexIMG26.png');
     background-repeat: no-repeat;
-     background-size: cover;
+    background-size: cover;
 }
 
 .intro{
@@ -26,7 +26,7 @@ body {
     inset: 0;
 }
 
-.art-image{
+.albumImg-container{
     position: absolute;
 
     width: 180px;
@@ -50,7 +50,7 @@ body {
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
 }
 
-.art-image.scattered {
+.albumImg-container.scattered {
     opacity: 1;
 }
 

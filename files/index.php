@@ -11,6 +11,22 @@
 <main class="intro">  <!--intro section i stylesheet -->
 
      <div class="albumImg-container">
+<img src="../images/albumIMG1.jpg" alt="" class="">
+<img src="../images/albumIMG2.jpg" alt="" class="">
+<img src="../images/albumIMG3.jpg" alt="" class="">
+<img src="../images/albumIMG4.jpg" alt="" class="">
+<img src="../images/albumIMG5.jpg" alt="" class="">
+<img src="../images/albumIMG6.jpg" alt="" class="">
+<img src="../images/albumIMG7.jpg" alt="" class="">
+<img src="../images/albumIMG8.jpg" alt="" class="">
+<img src="../images/albumIMG9.jpg" alt="" class="">
+<img src="../images/albumIMG10.jpg" alt="" class="">
+<img src="../images/albumIMG11.jpg" alt="" class="">
+<img src="../images/albumIMG21.jpg" alt="" class="">
+<img src="../images/albumIMG12.jpg" alt="" class="">
+<img src="../images/albumIMG22.jpg" alt="" class="">
+<img src="../images/albumIMG23.jpg" alt="" class="">
+<img src="../images/albumIMG27.jpg" alt="" class="">
 
     </div>
 

@@ -26,7 +26,7 @@ body {
     inset: 0;
 }
 
-.albumImg-container{
+.albumImg-container img {
     position: absolute;
 
     width: 180px;
@@ -50,7 +50,7 @@ body {
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
 }
 
-.albumImg-container.scattered {
+.albumImg-container img.scattered {
     opacity: 1;
 }
 
@@ -70,7 +70,7 @@ body {
 
     color: #29251f;
 
-    pointer-events: none;
+    /*pointer-events: none;*/
 }
 
 .introTxt-container h1{
@@ -93,7 +93,7 @@ body {
     margin: 0 auto;
 }
 
-.start-btn {
+.getStarted {
     display: inline-block;
 
     margin-top: 30px;
@@ -119,13 +119,14 @@ body {
     
 }
 /* Syns när animationen slutar*/
-.start-btn.visible {
+.getStarted.visible {
     opacity: 1;
     visibility: visible;
+    pointer-events:auto;
     transform: translateY(0);
 }
 
-.start-btn:hover {
+.getStarted:hover {
   background-color: #71634e;
 }
 

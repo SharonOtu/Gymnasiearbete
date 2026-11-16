@@ -92,6 +92,32 @@ function addUser($felt) {
         */
 }
 
+function getUser($username) {
+    
+    global $tourly;
+
+    $sql = "SELECT * FROM user WHERE username = :username";
+
+    $stmt = $tourly->prepare($sql);
+    $stmt->bindValue(':username', $username);
+    $stmt->execute();
+
+    return $stmt->fetch(PDO::FETCH_ASSOC); //fetch - hämtar data från dbn och returnerar som en array
+}
+
+function checkUsername($username) {
+
+    global $tourly;
+
+    $sql = "SELECT * FROM user WHERE username = :username";
+
+    $stmt = $tourly->prepare($sql);
+    $stmt->bindValue(':username', $username);
+    $stmt->execute();
+
+    return $stmt->rowCount() > 0; //rowCount - Returnerar antalet rader som påverkas av den senaste SQL-frågan
+}
+
 function updateUser($felt){
 
     global $tourly;
@@ -103,7 +129,11 @@ function updateUser($felt){
     email = :email, password = :password WHERE username = :username";
 
     $stmt = $tourly->prepare($sql);
-    $stmt->bindValue(':password', $hashed_password);
+    //$stmt->bindValue(':password', $hashed_password);
+    $hashedPassword = password_hash($felt['password'], PASSWORD_DEFAULT);
+
+    $stmt->bindValue(':password', $hashedPassword);
+
     } 
 
     else {

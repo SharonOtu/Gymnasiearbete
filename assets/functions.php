@@ -31,7 +31,7 @@ require_once 'config/db.php';
 function login($username, $password){
     global $tourly;
 
-    $sql = "SELECT * FROM user WHERE username = :username";
+    $sql = "SELECT * FROM users WHERE username = :username";
     $stmt = $tourly->prepare($sql);
     $stmt->bindValue(':username', $username);
     $stmt->execute();
@@ -67,7 +67,7 @@ function addUser($felt) {
 
     global $tourly;
 
-    $sql = "INSERT INTO user(username, name, email, password)
+    $sql = "INSERT INTO users(name, lastname, username, password, password)
         VALUES (:username,:name,:email,:password)";
     $stmt = $tourly->prepare($sql); // $sql - SQL koden i Vscode
 
@@ -96,7 +96,7 @@ function getUser($username) {
     
     global $tourly;
 
-    $sql = "SELECT * FROM user WHERE username = :username";
+    $sql = "SELECT * FROM users WHERE username = :username";
 
     $stmt = $tourly->prepare($sql);
     $stmt->bindValue(':username', $username);
@@ -109,13 +109,25 @@ function checkUsername($username) {
 
     global $tourly;
 
-    $sql = "SELECT * FROM user WHERE username = :username";
+    $sql = "SELECT * FROM users WHERE username = :username";
 
     $stmt = $tourly->prepare($sql);
     $stmt->bindValue(':username', $username);
     $stmt->execute();
 
     return $stmt->rowCount() > 0; //rowCount - Returnerar antalet rader som påverkas av den senaste SQL-frågan
+}
+
+function getArtists() {
+
+    global $tourly;
+
+    $sql = "SELECT * FROM artist";
+
+    $stmt = $tourly->prepare($sql);
+    $stmt->execute();
+
+    return $stmt;
 }
 
 function updateUser($felt){
@@ -125,7 +137,7 @@ function updateUser($felt){
     /*$hashed_password = password_hash($felt['password'], PASSWORD_DEFAULT);*/
 
     if(!empty($felt['password'])) {
-    $sql = "UPDATE user SET name = :name, 
+    $sql = "UPDATE users SET name = :name, 
     email = :email, password = :password WHERE username = :username";
 
     $stmt = $tourly->prepare($sql);
@@ -137,7 +149,7 @@ function updateUser($felt){
     } 
 
     else {
-    $sql = "UPDATE user SET name = :name, 
+    $sql = "UPDATE users SET name = :name, 
     email = :email WHERE username = :username";
 
     $stmt = $tourly->prepare($sql);
